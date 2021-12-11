@@ -18,15 +18,6 @@ public class ElementosViewModel extends AndroidViewModel {
 
     MutableLiveData<Elemento> elementoSeleccionado = new MutableLiveData<>();
 
-    MutableLiveData<String> terminoBusqueda = new MutableLiveData<>();
-
-    LiveData<List<Elemento>> resultadoBusqueda = Transformations.switchMap(terminoBusqueda, new Function<String, LiveData<List<Elemento>>>() {
-        @Override
-        public LiveData<List<Elemento>> apply(String input) {
-            return elementosRepositorio.buscar(input);
-        }
-    });
-
 
 
     public ElementosViewModel(@NonNull Application application) {
@@ -40,13 +31,11 @@ public class ElementosViewModel extends AndroidViewModel {
     LiveData<List<Elemento>> obtener(){
         return elementosRepositorio.obtener();
     }
-
-    LiveData<List<Elemento>> masValorados(){
-        return elementosRepositorio.masValorados();
+    LiveData<List<Elemento>> obtenerVillanos(){
+        return elementosRepositorio.obtenerVillanos();
     }
-
-    LiveData<List<Elemento>> buscar(){
-        return resultadoBusqueda;
+    LiveData<List<Elemento>> obtenerHeroes(){
+        return elementosRepositorio.obtenerHeroes();
     }
 
     void insertar(Elemento elemento){
@@ -70,8 +59,4 @@ public class ElementosViewModel extends AndroidViewModel {
         return elementoSeleccionado;
     }
 
-
-    void establecerTerminoBusqueda(String s){
-        terminoBusqueda.setValue(s);
-    }
 }

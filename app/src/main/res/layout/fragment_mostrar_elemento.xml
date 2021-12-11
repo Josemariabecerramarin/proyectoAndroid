@@ -7,6 +7,10 @@
     android:padding="16dp"
     tools:context=".MostrarElementoFragment">
 
+    <ImageView
+        android:id="@+id/imagen"
+        android:layout_width="match_parent"
+        android:layout_height="170dp" />
     <TextView
         android:id="@+id/nombre"
         android:layout_width="match_parent"
@@ -24,5 +28,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="24sp"
-        tools:text="@sample/elementos.json/elementos/descripcion"/>
+        tools:text="@sample/elementos.json/elementos/descripcion" />
+
 </LinearLayout>

@@ -35,6 +35,7 @@ public class MostrarElementoFragment extends Fragment {
                 binding.nombre.setText(elemento.nombre);
                 binding.descripcion.setText(elemento.descripcion);
                 binding.valoracion.setRating(elemento.valoracion);
+                binding.imagen.setImageResource(elemento.imagen);
 
                 binding.valoracion.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
                     @Override

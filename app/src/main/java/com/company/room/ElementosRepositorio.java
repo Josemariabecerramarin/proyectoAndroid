@@ -21,13 +21,11 @@ public class ElementosRepositorio {
     LiveData<List<Elemento>> obtener(){
         return elementosDao.obtener();
     }
-
-    LiveData<List<Elemento>> masValorados() {
-        return elementosDao.masValorados();
+    LiveData<List<Elemento>> obtenerVillanos(){
+        return elementosDao.obtenerVillanos();
     }
-
-    LiveData<List<Elemento>> buscar(String d) {
-        return elementosDao.buscar(d);
+    LiveData<List<Elemento>> obtenerHeroes(){
+        return elementosDao.obtenerHeroes();
     }
 
 

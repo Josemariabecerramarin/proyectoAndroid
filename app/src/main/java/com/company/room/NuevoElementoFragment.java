@@ -35,8 +35,35 @@ public class NuevoElementoFragment extends Fragment {
             public void onClick(View v) {
                 String nombre = binding.nombre.getText().toString();
                 String descripcion = binding.descripcion.getText().toString();
+                String tipo = binding.tipo.getText().toString();
 
-                elementosViewModel.insertar(new Elemento(nombre, descripcion));
+                switch (nombre){
+                    case "iron man":
+                        elementosViewModel.insertar(new Elemento(nombre, descripcion, R.drawable.ironman, tipo));
+                        break;
+                    case "capitan america":
+                        elementosViewModel.insertar(new Elemento(nombre, descripcion, R.drawable.capitanamerica, tipo));
+                        break;
+                    case "craneo rojo":
+                        elementosViewModel.insertar(new Elemento(nombre, descripcion, R.drawable.craneorojo, tipo));
+                        break;
+                    case "spiderman":
+                        elementosViewModel.insertar(new Elemento(nombre, descripcion, R.drawable.spiderman, tipo));
+                        break;
+                    case "thanos":
+                        elementosViewModel.insertar(new Elemento(nombre, descripcion, R.drawable.thanos, tipo));
+                        break;
+                    case "thor":
+                        elementosViewModel.insertar(new Elemento(nombre, descripcion, R.drawable.thor, tipo));
+                        break;
+                    case "ultron":
+                        elementosViewModel.insertar(new Elemento(nombre, descripcion, R.drawable.ultron, tipo));
+                        break;
+                    default:
+                        elementosViewModel.insertar(new Elemento(nombre, descripcion, R.drawable.predeterminada, tipo));
+                        break;
+                }
+
 
                 navController.popBackStack();
             }

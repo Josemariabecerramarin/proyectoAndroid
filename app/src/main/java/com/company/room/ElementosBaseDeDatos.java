@@ -28,7 +28,7 @@ public abstract class ElementosBaseDeDatos extends RoomDatabase {
             synchronized (ElementosBaseDeDatos.class) {
                 if (INSTANCIA == null) {
                     INSTANCIA = Room.databaseBuilder(context,
-                            ElementosBaseDeDatos.class, "elementos.db")
+                            ElementosBaseDeDatos.class, "marvel2.db")
                             .fallbackToDestructiveMigration()
                             .addCallback(new Callback() {
                                 @Override
@@ -48,6 +48,10 @@ public abstract class ElementosBaseDeDatos extends RoomDatabase {
     interface ElementosDao {
         @Query("SELECT * FROM Elemento")
         LiveData<List<Elemento>> obtener();
+        @Query("SELECT * FROM Elemento WHERE tipo='villanos'")
+        LiveData<List<Elemento>> obtenerVillanos();
+        @Query("SELECT * FROM Elemento WHERE tipo='heroes'")
+        LiveData<List<Elemento>> obtenerHeroes();
 
         @Insert
         void insertar(Elemento elemento);
@@ -57,11 +61,6 @@ public abstract class ElementosBaseDeDatos extends RoomDatabase {
 
         @Delete
         void eliminar(Elemento elemento);
-
-        @Query("SELECT * FROM Elemento ORDER BY valoracion DESC")
-        LiveData<List<Elemento>> masValorados();
-
-        @Query("SELECT * FROM Elemento WHERE nombre LIKE '%' || :d || '%'")
-        LiveData<List<Elemento>> buscar(String d);
+        
     }
 }

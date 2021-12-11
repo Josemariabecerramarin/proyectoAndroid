@@ -18,6 +18,7 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.company.room.databinding.FragmentRecyclerElementosBinding;
 import com.company.room.databinding.ViewholderElementoBinding;
 
@@ -103,6 +104,7 @@ public class RecyclerElementosFragment extends Fragment {
 
             holder.binding.nombre.setText(elemento.nombre);
             holder.binding.valoracion.setRating(elemento.valoracion);
+            Glide.with(RecyclerElementosFragment.this).load(elemento.imagen).into(holder.binding.imagen);
 
             holder.binding.valoracion.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
                 @Override

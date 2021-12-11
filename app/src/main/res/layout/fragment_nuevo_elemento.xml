@@ -19,6 +19,12 @@
         android:layout_height="wrap_content"
         android:hint="Descripción"
         android:textSize="32sp"/>
+    <EditText
+        android:id="@+id/tipo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Tipo"
+        android:textSize="32sp"/>
     <Button
         android:id="@+id/crear"
         android:layout_width="match_parent"

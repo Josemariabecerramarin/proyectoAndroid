@@ -11,9 +11,13 @@ public class Elemento {
     String nombre;
     String descripcion;
     float valoracion;
+    int imagen;
+    String tipo;
 
-    public Elemento(String nombre, String descripcion) {
+    public Elemento(String nombre, String descripcion, int imagen, String tipo) {
         this.nombre = nombre;
         this.descripcion = descripcion;
+        this.imagen = imagen;
+        this.tipo = tipo;
     }
 }

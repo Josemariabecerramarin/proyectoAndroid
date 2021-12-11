@@ -1,18 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
+        android:id="@+id/homeFragment"
+        android:icon="@drawable/menu"
+        android:title="Menu principal" />
+
+    <item
         android:id="@+id/recyclerElementosFragment"
-        android:icon="@android:drawable/ic_input_get"
-        android:title="Elementos" />
+        android:icon="@drawable/heroes"
+        android:title="Personajes" />
 
     <item
-        android:id="@+id/recyclerValoracionFragment"
-        android:icon="@android:drawable/btn_star_big_on"
-        android:title="Valoración" />
-
+        android:id="@+id/villanos"
+        android:icon="@drawable/villanos"
+        android:title="Villanos" />
     <item
-        android:id="@+id/recyclerBuscarFragment"
-        android:icon="@android:drawable/ic_menu_search"
-        android:title="Buscar" />
+        android:id="@+id/heroes"
+        android:icon="@drawable/personajes"
+        android:title="Heroes" />
 
 </menu>
